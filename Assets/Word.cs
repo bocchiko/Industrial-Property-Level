@@ -8,14 +8,16 @@ public class Word
     public string word;
     private int index;
 
-    WordDisplay display;
+    private WordDisplay display;
+    private WordManager wordManager;
 
-    public Word(string _word, WordDisplay _display)
+    public Word(string _word, WordDisplay _display, WordManager _wordManager)
     {
         word = _word;
         index = 0;
         display = _display;
-        display.SetWord(word);
+        wordManager = _wordManager;
+        display.SetWord(this, wordManager);
     }
 
     public char GetNextLetter()
@@ -38,6 +40,5 @@ public class Word
         }
         return wordTyped;
     }
-
-
 }
+

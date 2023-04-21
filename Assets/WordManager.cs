@@ -16,7 +16,7 @@ public class WordManager : MonoBehaviour
 
     public void AddWord()
     {
-        Word brand = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
+        Word brand = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord(), this);
         Debug.Log(brand.word);
 
         brands.Add(brand);
@@ -48,11 +48,14 @@ public class WordManager : MonoBehaviour
         if(activeWord && activeBrand.WordTyped())
         {
             activeWord = false;
-            brands.Remove(activeBrand);
+            RemoveWord(activeBrand);
         }
 
     }
 
-    
-
+    public void RemoveWord(Word word)
+    {
+        activeWord = false;
+        brands.Remove(word);
+    }
 }
