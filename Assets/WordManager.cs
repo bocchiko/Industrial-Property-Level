@@ -13,6 +13,9 @@ public class WordManager : MonoBehaviour
     //controls currente active word that is being typed
     private Word activeBrand;
 
+    public int bossMaxHp = 1000;
+    public int bossCurrentHp = 1000;
+
 
     public void AddWord()
     {
@@ -29,6 +32,8 @@ public class WordManager : MonoBehaviour
             if(activeBrand.GetNextLetter() == letter)
             {
                 activeBrand.TypeLetter();
+                bossCurrentHp -= 10;
+                Debug.Log(bossCurrentHp);
             }
         }
         else
@@ -58,4 +63,5 @@ public class WordManager : MonoBehaviour
         activeWord = false;
         brands.Remove(word);
     }
+
 }

@@ -14,7 +14,8 @@ public class WordGenerator : MonoBehaviour
                                              "rolls-royce", "guerlain", "l'oreal", "sephora", 
                                              "under armour", "toyota", "mercedes-benz", "audi", 
                                              "louis vuitton", "hermes", "omega", "cartier", 
-                                             "montblanc"};
+                                             "montblanc", "patentes", "industria", "leyes",
+                                             "inventos", "marcas", "modelos", "propiedad"};
 
     public static string GetRandomWord()
     {
