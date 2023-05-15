@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class WordGenerator : MonoBehaviour
 {
-    private static string[] FalseBrand = {"nike", "coca-cola", "apple", "microsoft", "bmw", 
-                                            "gucci", "chanel", "mcdonald's", "visa", "samsung", 
-                                            "amazon", "sony", "google", "adidas", "puma", 
-                                            "ford", "chevrolet", "levi's", "tiffany y co.", 
-                                            "rolex", "pepsi", "heineken", "nestle", "kellogg's",
-                                             "intel", "canon", "nikon", "hp", "dell", "ibm", 
-                                             "porsche", "ferrari", "lamborghini", 
-                                             "rolls-royce", "guerlain", "l'oreal", "sephora", 
-                                             "under armour", "toyota", "mercedes-benz", "audi", 
-                                             "louis vuitton", "hermes", "omega", "cartier", 
-                                             "montblanc", "patentes", "industria", "leyes",
+    private static string[] FalseBrand = {"marcas", "derecho exclusivo", "invencion", "comercio", "autor", 
+                                            "creador", "obra", "libro", "musica", "tecnologia", 
+                                            "empresas", "negocio", "signos distintivos", "logos", "nombre comercial", 
+                                            "arte", "legislacion", "registro", "derecho", 
+                                            "derecho de autor", "creacion", "bien protegido", "eslogan", "distintivo corporativo",
+                                             "original", "producto", "titular", "licencia", "caducidad", "servicios", 
+                                             "inmaterial", "clasificacion", "monopoliio", 
+                                             "vulneracion", "proteccion", "nacional", "comunitario", 
+                                             "global", "internacional", "propiedad industrial", "propiedad intelectual", 
+                                            "patentes", "industria", "leyes",
                                              "inventos", "marcas", "modelos", "propiedad"};
 
     public static string GetRandomWord()
