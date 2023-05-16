@@ -13,8 +13,13 @@ public class WordManager : MonoBehaviour
     //controls currente active word that is being typed
     private Word activeBrand;
 
+    //Boss health
     public int bossMaxHp = 1000;
     public int bossCurrentHp = 1000;
+
+    //Score variables
+    public int initialScore = 0;
+    public int currentScore = 0;
 
 
     public void AddWord()
@@ -25,7 +30,7 @@ public class WordManager : MonoBehaviour
         brands.Add(brand);
     }
 
-     public void TypeLetter(char letter)
+    public void TypeLetter(char letter)
     {
         if(activeWord)
         {
@@ -33,7 +38,8 @@ public class WordManager : MonoBehaviour
             {
                 activeBrand.TypeLetter();
                 bossCurrentHp -= 10;
-                Debug.Log(bossCurrentHp);
+                currentScore += 10;
+                Debug.Log(currentScore);
             }
         }
         else
