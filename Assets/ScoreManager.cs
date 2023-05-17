@@ -14,27 +14,47 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
     private const string ScoreKey = "Score";
 
+    private float currentTime;
+    private const string CurrentTimeKey = "CurrentTime";
+
     private void Awake()
     {
         instance = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        score = PlayerPrefs.GetInt(ScoreKey, 0);
-        scoreText.text = score.ToString();
+        score = 0;
+        
+        UpdateScoreText();
+
+        currentTime = PlayerPrefs.GetFloat(CurrentTimeKey, 0f);
     }
 
     public void AddScore()
     {
         score += 10;
-        scoreText.text = score.ToString();
+        UpdateScoreText();
 
-        if (score >= 5000)
+        if (score >= 300)
         {
+            int additionalScore = (int)(currentTime * 100);
+            score += additionalScore;
+
             PlayerPrefs.SetInt(ScoreKey, score);
+            PlayerPrefs.SetInt("AdditionalScore", additionalScore);
             SceneManager.LoadScene("VictoryScreen");
         }
     }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetFloat(CurrentTimeKey, currentTime);
+    }
+
+    void UpdateScoreText()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
+
 }

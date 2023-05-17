@@ -12,11 +12,15 @@ public class CountDown : MonoBehaviour
     [SerializeField] public float startingTime = 180f;
 
     [SerializeField] TextMeshProUGUI countText;
+
+    private ScoreManager scoreManager;
     
     void Start()
     {
         currentTime = startingTime;
         UpdateCountText();
+
+        scoreManager = ScoreManager.instance;
     }
     
     void Update()
@@ -31,6 +35,7 @@ public class CountDown : MonoBehaviour
         if(currentTime <= 0)
         {
             currentTime = 0;
+            
             SceneManager.LoadScene("LoseScreen");
         }
 
@@ -40,7 +45,12 @@ public class CountDown : MonoBehaviour
 
     void UpdateCountText()
     {
-        countText.text = currentTime.ToString("0");
+        countText.text = "Time: " + currentTime.ToString("0");
+    }
+
+    public float GetCurrentTime()
+    {
+        return currentTime;
     }
 
 }
