@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] public TextMeshProUGUI scoreText;
 
-    int score = 0;
+    public int score = 0;
 
     private void Awake()
     {
@@ -27,5 +28,10 @@ public class ScoreManager : MonoBehaviour
     {
         score += 10;
         scoreText.text = score.ToString();
+
+        if (score >= 100)
+        {
+            SceneManager.LoadScene("VictoryScreen");
+        }
     }
 }
