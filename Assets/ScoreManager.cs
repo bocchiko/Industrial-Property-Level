@@ -11,11 +11,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] public TextMeshProUGUI scoreText;
 
-    public int score = 0;
-    private const string ScoreKey = "Score";
-
-    private float currentTime;
-    private const string CurrentTimeKey = "CurrentTime";
+    public int score = 1500;
 
     private void Awake()
     {
@@ -23,38 +19,26 @@ public class ScoreManager : MonoBehaviour
     }
 
     void Start()
-    {
-        score = 0;
-        
+    {   
+        score = 1500;
         UpdateScoreText();
-
-        currentTime = PlayerPrefs.GetFloat(CurrentTimeKey, 0f);
     }
 
     public void AddScore()
     {
-        score += 10;
+        score -= 10;
         UpdateScoreText();
 
-        if (score >= 300)
-        {
-            int additionalScore = (int)(currentTime * 100);
-            score += additionalScore;
-
-            PlayerPrefs.SetInt(ScoreKey, score);
-            PlayerPrefs.SetInt("AdditionalScore", additionalScore);
+        if (score <= 0)
+        {   
+            score = 0;
             SceneManager.LoadScene("VictoryScreen");
         }
     }
 
-    private void OnDestroy()
-    {
-        PlayerPrefs.SetFloat(CurrentTimeKey, currentTime);
-    }
-
     void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Boss HP: " + score.ToString();
     }
 
 }

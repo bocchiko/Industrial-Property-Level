@@ -9,9 +9,7 @@ public class DisplayScore : MonoBehaviour
 
     void Start()
     {
-        int score = PlayerPrefs.GetInt("Score", 0);
-        int additionalScore = PlayerPrefs.GetInt("AdditionalScore", 0);
-        scoreText.text = "Your Score: " + score.ToString() + "\nAdditional Score: " + additionalScore.ToString();
+        scoreText.text = "You Defeated the Boss ";
     }
 
 }
