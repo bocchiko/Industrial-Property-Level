@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI scoreText;
 
     public int score = 0;
+    private const string ScoreKey = "Score";
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = PlayerPrefs.GetInt(ScoreKey, 0);
         scoreText.text = score.ToString();
     }
 
@@ -29,8 +31,9 @@ public class ScoreManager : MonoBehaviour
         score += 10;
         scoreText.text = score.ToString();
 
-        if (score >= 100)
+        if (score >= 5000)
         {
+            PlayerPrefs.SetInt(ScoreKey, score);
             SceneManager.LoadScene("VictoryScreen");
         }
     }
