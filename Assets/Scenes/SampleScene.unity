@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  startingTime: 10
+  startingTime: 180
   countText: {fileID: 833102928}
 --- !u!114 &833102928
 MonoBehaviour:

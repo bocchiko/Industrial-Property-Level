@@ -10,7 +10,7 @@ public class WordGenerator : MonoBehaviour
                                             "arte", "legislacion", "registro", "derecho", 
                                             "derecho de autor", "creacion", "bien protegido", "eslogan", "distintivo corporativo",
                                              "original", "producto", "titular", "licencia", "caducidad", "servicios", 
-                                             "inmaterial", "clasificacion", "monopoliio", 
+                                             "inmaterial", "clasificacion", "monopolio", 
                                              "vulneracion", "proteccion", "nacional", "comunitario", 
                                              "global", "internacional", "propiedad industrial", "propiedad intelectual", 
                                             "patentes", "industria", "leyes",
